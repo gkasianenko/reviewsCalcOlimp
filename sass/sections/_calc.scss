@@ -1,0 +1,21 @@
+.reviews-calc .container {
+    margin-top: 129px;
+    margin-bottom: 129px;
+}
+
+.reviews-calc__platforms h1 {
+    margin-bottom: 38px;
+    position: relative;
+
+    &:before{
+        position: absolute;
+        content: "";
+        height: 4px;
+        width: 89px;
+        position: absolute;
+        bottom: -5px;
+        z-index: -1;
+        background-color: #DF0000;
+
+    }
+}
