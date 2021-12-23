@@ -14,6 +14,7 @@ body {
 	height: 100%; /* sticky footer */
 	display: flex; /* sticky footer */
 	flex-direction: column; /* sticky footer */
+	flex-shrink: 0;
 	margin: 0;
 	font-family: 'Montserrat', sans-serif;
 	color: $textColor;
@@ -97,10 +98,11 @@ legend {
 /* Grid styles */
 
 .container {
-	width: 1440px;
+	max-width: 1600px;
+	width: 100%;
 	margin: 0 auto;
-	padding-left: 68px;
-	padding-right: 102px;
+	padding-right: 15px;
+	padding-left: 15px;
 }
 
 /* Utility */

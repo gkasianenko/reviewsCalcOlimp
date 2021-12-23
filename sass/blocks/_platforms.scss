@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 59px;
+
 }
 
 .reviews-calc__quantity h2 {
@@ -12,7 +13,7 @@
     width: 90px;
     height: 31px;
     border-radius: 5px;
-    border: 0.3px solid rgba(0, 0, 0, 0.35);
+    border: .3px solid rgba(0, 0, 0, 0.25);
 }
 
 .reviews-calc__quantity svg{
@@ -26,16 +27,26 @@
 
 .reviews-calc__info {
     display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
 
-    & h3:first-child{
-        margin-left: 52px;
-    }
+    padding-bottom: 14px;
 
-    & h3:nth-child(2){
-        margin-left: 264px;
-    }
+    border-bottom: .3px solid rgba(0, 0, 0, 0.25);
+}
 
-    & h3:nth-child(3){
-        margin-left: 107px;
+.reviews-calc__info-left {
+    width: 50%;
+    min-width: 390px;
+
+    &:first-child{
+        padding-left: 52px;
     }
+}
+
+.reviews-calc__info-right{
+    display: flex;
+    justify-content: space-between;
+
+    width: 50%;
 }

@@ -22,6 +22,8 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   /* sticky footer */
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   color: #000000;
@@ -92,10 +94,11 @@ legend {
 
 /* Grid styles */
 .container {
-  width: 1440px;
+  max-width: 1600px;
+  width: 100%;
   margin: 0 auto;
-  padding-left: 68px;
-  padding-right: 102px; }
+  padding-right: 15px;
+  padding-left: 15px; }
 
 /* Utility */
 .none {
@@ -113,6 +116,9 @@ legend {
 .reviews-calc .container {
   margin-top: 129px;
   margin-bottom: 129px; }
+
+.reviews-calc__platforms {
+  width: 65%; }
 
 .reviews-calc__platforms h1 {
   margin-bottom: 38px;
@@ -143,7 +149,7 @@ legend {
   width: 90px;
   height: 31px;
   border-radius: 5px;
-  border: 0.3px solid rgba(0, 0, 0, 0.35); }
+  border: 0.3px solid rgba(0, 0, 0, 0.25); }
 
 .reviews-calc__quantity svg {
   margin-left: 9px; }
@@ -155,12 +161,145 @@ legend {
 .reviews-calc__info {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
-  .reviews-calc__info h3:first-child {
-    margin-left: 52px; }
-  .reviews-calc__info h3:nth-child(2) {
-    margin-left: 264px; }
-  .reviews-calc__info h3:nth-child(3) {
-    margin-left: 107px; }
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 14px;
+  border-bottom: 0.3px solid rgba(0, 0, 0, 0.25); }
+
+.reviews-calc__info-left {
+  width: 50%;
+  min-width: 390px; }
+  .reviews-calc__info-left:first-child {
+    padding-left: 52px; }
+
+.reviews-calc__info-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 50%; }
+
+.calc-product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  padding-top: 15px;
+  padding-bottom: 15px; }
+
+.calc-product__left {
+  position: relative;
+  height: 30px;
+  width: 50%;
+  min-width: 390px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.calc-product__right {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.calc-product__tip {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 32px; }
+
+.calc-product__tooltip {
+  position: absolute;
+  display: none;
+  top: -8px;
+  left: calc(100%);
+  z-index: 99;
+  width: 378px;
+  height: 30px;
+  margin-left: 15px;
+  padding: 10px 5px;
+  background-color: #FFF6DD;
+  border-radius: 5px;
+  font-weight: 300;
+  font-size: 9px;
+  line-height: 11px; }
+
+.calc-product__tooltip a {
+  color: red; }
+
+.calc-product__counter {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 115px;
+  font-size: 23px;
+  border: 0.3px solid rgba(0, 0, 0, 0.25);
+  border-radius: 5px; }
+
+.calc-product__minus, .calc-product__plus {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: initial;
+  width: 27px; }
+
+.calc-product__input {
+  width: 60px;
+  border: none;
+  outline: none; }
+
+.calc-product__minus {
+  padding-bottom: 3px; }
+  .calc-product__minus::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 60%;
+    left: 0px;
+    top: 6px;
+    border: 0.3px solid rgba(0, 0, 0, 0.1); }
+
+.calc-product__plus::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 60%;
+  right: 0px;
+  top: 6px;
+  border: 0.3px solid rgba(0, 0, 0, 0.1); }
+
+.svg-minus {
+  margin-right: 25px; }
 
 /*# sourceMappingURL=main.css.map */
