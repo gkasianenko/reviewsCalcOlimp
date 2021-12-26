@@ -28,6 +28,7 @@ body > * {
 input, textarea, button {
 	font-family: inherit;
 	padding: 0;
+	outline: none;
 }
 
 label {
@@ -66,9 +67,10 @@ input {
     text-align: center; 
 }
 
-button {
-	outline: none;
+.button{
+	cursor: pointer;
 }
+
 
 img {
 	display: block;
@@ -103,6 +105,10 @@ legend {
 	margin: 0 auto;
 	padding-right: 15px;
 	padding-left: 15px;
+
+	@media (max-width: 1100px){
+		width: 375px;
+	}
 }
 
 /* Utility */
