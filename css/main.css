@@ -365,7 +365,10 @@ legend {
       -ms-flex-pack: center;
           justify-content: center;
   font-family: initial;
-  width: 27px; }
+  width: 27px;
+  cursor: pointer; }
+  .calc-product__minus:hover, .calc-product__plus:hover {
+    color: rgba(0, 0, 0, 0.25); }
 
 .calc-product__input {
   width: 60px;
@@ -472,7 +475,8 @@ legend {
 .reviews-calc__textarea textarea {
   margin-bottom: 5px;
   height: 107px;
-  width: 100%; }
+  width: 100%;
+  resize: none; }
 
 .reviews-calc__input {
   display: -webkit-box;
@@ -527,5 +531,4 @@ legend {
   position: absolute;
   top: 66px;
   left: 15px; }
-
 /*# sourceMappingURL=main.css.map */
