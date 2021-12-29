@@ -368,7 +368,8 @@ legend {
   width: 27px;
   cursor: pointer; }
   .calc-product__minus:hover, .calc-product__plus:hover {
-    color: rgba(0, 0, 0, 0.25); }
+    color: rgba(0, 0, 0, 0.25);
+    cursor: pointer; }
 
 .calc-product__input {
   width: 60px;
@@ -522,7 +523,8 @@ legend {
   background-color: #DF0000;
   font-weight: 700;
   font-size: 18px;
-  color: #fff; }
+  color: #fff;
+  cursor: pointer; }
 
 #calc-area {
   padding: 20px 15px 30px 15px; }
@@ -531,4 +533,5 @@ legend {
   position: absolute;
   top: 66px;
   left: 15px; }
+
 /*# sourceMappingURL=main.css.map */
