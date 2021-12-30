@@ -6,6 +6,9 @@ const modelCalc = (function(){
         dvagis: 1000,
         prodoktorov: 800,
         zoon: 600,
+        spr: 600,
+        yellru: 600,
+        flamp: 600,
         branch: 400
     }
 
