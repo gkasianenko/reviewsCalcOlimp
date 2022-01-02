@@ -4,9 +4,14 @@ const controllerCalc = (function(modelCalc, viewCalc){
     const pluses = document.querySelectorAll(DOM.plus);
     const minuses = document.querySelectorAll(DOM.minus);
     const quantityInput = document.querySelector(DOM.quantity);
+    const scroller = document.querySelector(DOM.productScroller);
+    const svgMinuses = document.querySelectorAll(DOM.svgMinus);
+    const svgPlus = document.querySelector(DOM.svgPlus);
+    const productScrollerIcons = document.querySelectorAll(DOM.productChoose);
+
+    
 
     const setupEventListeners = function(){
-
 
         for(let i = 0; i < pluses.length; i++){
             pluses[i].addEventListener("click", plusCounter)
@@ -18,6 +23,16 @@ const controllerCalc = (function(modelCalc, viewCalc){
 
         quantityInput.addEventListener("change", renewPrice);
 
+        svgPlus.addEventListener("click", viewCalc.toggleScroller)
+
+       for(let i = 0; i < productScrollerIcons.length; i++){
+        productScrollerIcons[i].addEventListener("click", openProductPlatform)
+       }
+
+       for(let i = 0; i < svgMinuses.length; i++){
+           svgMinuses[i].addEventListener("click", closeProductPlatform)
+       }
+        
     }
 
     const prices = modelCalc.getPrices();
@@ -32,7 +47,7 @@ const controllerCalc = (function(modelCalc, viewCalc){
         
             const product = event.target.closest(DOM.product);
 
-        const counter = event.target.closest(DOM.counter)
+        const counter = event.target.closest(DOM.counter);
 
         let counterValue = counter.querySelector(DOM.counterInput).value;
 
@@ -114,10 +129,42 @@ const controllerCalc = (function(modelCalc, viewCalc){
         
     }
 
+    function openProductPlatform(event){
+        viewCalc.openProduct(event);
+        viewCalc.showLastPrice(calculatePriceSummary());
+    }
+
+    function closeProductPlatform(event){
+        viewCalc.closeProduct(event)
+
+        const product = event.target.closest(DOM.product);
+        product.querySelector(DOM.counterInput).value = 0;
+
+        showPrice(product, 0);
+        viewCalc.showLastPrice(calculatePriceSummary());
+        
+
+    }
+
     function renewPrice(){
         viewCalc.showLastPrice(calculatePriceSummary());
         this.style.backgroundColor = !!this.value ? "white" : "rgba(244, 130, 130, 0.15)";
     }
+
+    
+
+    // function closeProduct(event){
+
+    //     const targetParent = event.target.closest(DOM.product);
+    //     const nearestIcon = targetParent.querySelector(DOM.productIcon);
+
+    //     const iconClone = nearestIcon.cloneNode(true);
+
+    //     document.querySelector(DOM.productChooseIcon).before(iconClone);
+
+    //     targetParent.classList.add("hidden");
+    // }
+
 
     return {
         init: function(){
